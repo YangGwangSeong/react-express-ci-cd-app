@@ -1,13 +1,11 @@
 version: "3"
 services:
   frontend:
-    build:
-      image: yanggwangseong/node-frontend
-      context: ./frontend
+    image: yanggwangseong/node-frontend
     volumes:
       - /app/node_modules
       - ./frontend:/app
-    stdin_open : true
+    stdin_open: true
     mem_limit: 128m
     
   nginx:
