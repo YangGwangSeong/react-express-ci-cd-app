@@ -1,7 +1,7 @@
 version: "3"
 services:
   frontend:
-    image: yanggwangseong/node-frontend
+    image: yanggwangseong/docker-frontend
     volumes:
       - /app/node_modules
       - ./frontend:/app
@@ -10,12 +10,12 @@ services:
     
   nginx:
     restart: always
-    image: yanggwangseong/node-nginx
+    image: yanggwangseong/docker-nginx
     ports:
       - "80:80"
 
   backend:
-    image: yanggwangseong/node-backend
+    image: yanggwangseong/docker-backend
     container_name: app_backend
     volumes:
       - /app/node_modules
