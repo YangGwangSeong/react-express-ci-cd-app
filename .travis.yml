@@ -12,15 +12,15 @@ script:
   - docker run -e CI=true yanggwangseong/react-test-app npm run test
 
 after_success:
-  - docker build -t yanggwangseong/docker-frontend ./frontend
-  - docker build -t yanggwangseong/docker-backend ./backend
-  - docker build -t yanggwangseong/docker-nginx ./nginx
+  - docker build -t yanggwangseong/docker-frontend2 ./frontend
+  - docker build -t yanggwangseong/docker-backend2 ./backend
+  - docker build -t yanggwangseong/docker-nginx2 ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  - docker push yanggwangseong/docker-frontend
-  - docker push yanggwangseong/docker-backend
-  - docker push yanggwangseong/docker-nginx
+  - docker push yanggwangseong/docker-frontend2
+  - docker push yanggwangseong/docker-backend2
+  - docker push yanggwangseong/docker-nginx2
 
 deploy:
   provider: elasticbeanstalk
